@@ -1,0 +1,6 @@
+[book]
+authors = ["Kamil Czerwiński"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Tamto Design Docs"
