@@ -31,9 +31,10 @@ jobs:
     env:
       MDBOOK_VERSION: 0.4.21
     steps:
-      - uses: taiki-e/install-action@v2
+      - name: Install mdBook and dependencies
+        uses: taiki-e/install-action@v2
         with:
-          tool: mdbook@${MDBOOK_VERSION},mdbook-toc,mdbook-admonish
+          tool: mdbook@0.4.21,mdbook-toc,mdbook-admonish
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
