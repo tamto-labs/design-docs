@@ -30,7 +30,7 @@ Add image of system architecture here.
 Messaging Broker is the core component of the system. It manages message routing and delivery between producers and consumers. The broker is built on top of the Chord protocol, ensuring efficient distribution and scalability of messages across the network.
 
 ~~~admonish question title="How should the message delivery be handled?"
-The idea is to use the Chord finger tables to deliver messages to consumers. This ensures even distribution of messages across the network.
+The idea is to use the Chord finger tables to deliver messages to consumers. This ensures even distribution of messages across the network. Another advantage is that if the number of nodes increases, the number of node-to-node connections will not increase.
 
 The question is what happens when there is a large amount of consumers for a single topic? How would the performance be affected? 
 
@@ -43,7 +43,14 @@ The broker receives incoming messages from producers via Cap'n'Proto streaming f
 
 ### 2.3 Chord Protocol Implementation
 
-Provides a distributed data management layer for efficient message routing and storage.
+Chord is a protocol for building decentralized data storage systems. It is used to efficiently locate the node that stores a specific piece of data in a network of nodes. This makes it a great fit for the scalable messaging system. In theory there is no limit to the number of nodes that can be added to the network, making it a great choice for a messaging system that needs to scale.
+
+The detailed design of the Chord protocol can be found in the [Chord paper](https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf).
+
+There are various components of Chord which could be used in Tamto for effective message routing and delivery. These include:
+
+ - **Chord Finger Table**: A data structure that stores information about limited number of other nodes in the network. It is used to efficiently locate the node that stores a specific piece of data in a network of nodes.
+
 
 ### 2.4 In-memory Message Storage
 
