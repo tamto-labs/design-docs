@@ -1,2 +1,7 @@
 # Summary
-- [RFC #1 - Tamto](./rfc/0001-tamto.md)
+
+# RFCs
+- [RFC #1 - Tamto]()
+
+# Drafts
+- [Draft #1 - Tamto](./drafts/0001-tamto.md)

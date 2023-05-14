@@ -1,4 +1,4 @@
-# RFC #1 - Tamto
+# Draft #1 - Tamto
 
 ## Abstract
 
@@ -28,6 +28,14 @@ Add image of system architecture here.
 ### 2.1 Messaging Broker
 
 Messaging Broker is the core component of the system. It manages message routing and delivery between producers and consumers. The broker is built on top of the Chord protocol, ensuring efficient distribution and scalability of messages across the network.
+
+~~~admonish question title="How should the message delivery be handled?"
+The idea is to use the Chord finger tables to deliver messages to consumers. This ensures even distribution of messages across the network.
+
+The question is what happens when there is a large amount of consumers for a single topic? How would the performance be affected? 
+
+What other approaches could be considered for better performance?
+~~~
 
 ### 2.2 Message Producers and Consumers
 
